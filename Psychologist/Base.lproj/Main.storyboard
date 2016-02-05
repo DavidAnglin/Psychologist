@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1404" y="-460"/>
         </scene>
-        <!--Happiness View Controller-->
+        <!--Diagnosed Happiness View Controller-->
         <scene sceneID="pMY-yd-kNe">
             <objects>
-                <viewController id="xzG-Lb-uCm" customClass="HappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xzG-Lb-uCm" customClass="DiagnosedHappinessViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o3o-fz-2et"/>
                         <viewControllerLayoutGuide type="bottom" id="G7u-Wf-sEe"/>
@@ -161,7 +161,15 @@
                             <constraint firstItem="fgT-Et-aYo" firstAttribute="leading" secondItem="oG5-eA-2e2" secondAttribute="leading" id="uAf-ic-aBJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wLm-gs-JmW"/>
+                    <navigationItem key="navigationItem" id="wLm-gs-JmW">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="Y4g-Es-ld7">
+                            <connections>
+                                <segue destination="DC1-9B-TFU" kind="popoverPresentation" identifier="Show Diagnostic History" popoverAnchorBarButtonItem="Y4g-Es-ld7" id="ENG-Gp-Pex">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="faceView" destination="fgT-Et-aYo" id="LzQ-cJ-Qgr"/>
                     </connections>
@@ -173,7 +181,43 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1729" y="503"/>
+            <point key="canvasLocation" x="1019" y="407"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="zcu-17-NES">
+            <objects>
+                <viewController id="DC1-9B-TFU" customClass="TextViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vqM-jG-udl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dm6-Nu-lKw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JXG-aX-H3I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dgG-za-lcB">
+                                <rect key="frame" x="0.0" y="10" width="600" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dgG-za-lcB" firstAttribute="leading" secondItem="JXG-aX-H3I" secondAttribute="leading" id="1H4-vM-u66"/>
+                            <constraint firstItem="dgG-za-lcB" firstAttribute="bottom" secondItem="Dm6-Nu-lKw" secondAttribute="top" id="hMz-uJ-iNZ"/>
+                            <constraint firstItem="dgG-za-lcB" firstAttribute="top" secondItem="JXG-aX-H3I" secondAttribute="topMargin" constant="10" id="q3C-EB-MkV"/>
+                            <constraint firstAttribute="trailing" secondItem="dgG-za-lcB" secondAttribute="trailing" id="ru5-iD-zE1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="dgG-za-lcB" id="UGu-ls-tWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4c-im-YhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="407"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="jym-Be-2Md">
@@ -222,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfw-k2-dOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="503"/>
+            <point key="canvasLocation" x="309" y="407"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
